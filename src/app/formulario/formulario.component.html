@@ -1,0 +1,117 @@
+<h1>Formulario registro de Empleados</h1>
+<hr />
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombre"
+        formControlName="nombre"
+      />
+      <div
+        class="error"
+        *ngIf="
+          formulario.controls.nombre.errors &&
+          formulario.controls.nombre.touched
+        "
+      >
+        El nombre es requerido.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="apellidos" class="form-label">Apellidos</label>
+      <input
+        type="text"
+        class="form-control"
+        id="apellidos"
+        formControlName="apellidos"
+      />
+      <div
+        class="error"
+        *ngIf="
+          formulario.controls.apellidos.errors &&
+          formulario.controls.apellidos.touched
+        "
+      >
+        El apellido es requerido.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+      />
+      <div
+        class="error"
+        *ngIf="
+          formulario.controls.email.errors && formulario.controls.email.touched
+        "
+      >
+        El email es requerido.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="edad" class="form-label">Edad</label>
+      <input
+        type="number"
+        class="form-control"
+        id="edad"
+        formControlName="edad"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="departamento" class="form-label">Departamento</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        formControlName="departamento"
+      >
+        <option value="one">One</option>
+        <option value="two">Two</option>
+        <option value="three">Three</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="password" class="form-label">Psssword</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="imagen" class="form-label">Imagen</label>
+      <input
+        type="url"
+        class="form-control"
+        id="imagen"
+        formControlName="imagen"
+      />
+    </div>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-info col-12"
+    [disabled]="!formulario.valid"
+  >
+    Guardar
+  </button>
+</form>

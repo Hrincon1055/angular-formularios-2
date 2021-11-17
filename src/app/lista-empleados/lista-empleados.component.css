@@ -1,0 +1,13 @@
+.empleados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.empleado {
+  width: 200px;
+  border: 1px solid tomato;
+  padding: 5px;
+}
+.empleado img {
+  width: 100%;
+}
